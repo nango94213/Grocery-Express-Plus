@@ -1,0 +1,27 @@
+// create a store and an item to sell
+make_store,kroger,33000
+display_stores
+sell_item,kroger,cheesecake,4
+display_items,kroger
+// create a drone that will be used to deliver orders
+make_drone,kroger,1,40,0
+display_drones,kroger
+// create a customer and an order with one item
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+start_order,kroger,purchaseB,1,aapple2
+request_item,kroger,purchaseB,cheesecake,4,4
+display_orders,kroger
+// ERROR - attempt to cancel an order from a non-existent store
+cancel_order,wegmans,purchaseA
+// ERROR - attempt to cancel a non-existent order
+cancel_order,kroger,purchaseA
+display_customers
+display_stores
+display_orders,kroger
+// cancel the order
+cancel_order,kroger,purchaseB
+display_customers
+display_stores
+display_orders,kroger
+stop

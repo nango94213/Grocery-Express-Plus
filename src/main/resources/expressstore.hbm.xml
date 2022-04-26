@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.models.ExpressStore" table = "expressstore">
+
+        <meta attribute = "class-description">
+            This class contains store details.
+        </meta>
+
+        <id name = "name" type = "string" column = "name" />
+
+        <property name = "storeownerusername" column = "storeownerusername" type = "string"/>
+        <property name = "revenue" column = "revenue" type = "int"/>
+
+    </class>
+</hibernate-mapping>

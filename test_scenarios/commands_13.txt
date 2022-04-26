@@ -1,0 +1,19 @@
+// create a store
+make_store,kroger,33000
+display_stores
+// create pilots that will fly the drones
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+make_pilot,ggrape17,Grape,Geri,999-999-9999,678-90-1234,panam_5,14
+display_pilots
+// create drones that will be used to deliver groceries
+make_drone,kroger,1,40,3
+make_drone,kroger,2,75,2
+display_drones,kroger
+// assign the pilots to fly specific drones
+fly_drone,kroger,1,ffig8
+fly_drone,kroger,2,ggrape17
+display_drones,kroger
+// demonstrate the effect of assigning a pilot to a new drone
+fly_drone,kroger,2,ffig8
+display_drones,kroger
+stop

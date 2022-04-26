@@ -1,0 +1,93 @@
+Welcome to the Grocery Express Delivery Service!
+> // create stores
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> // create items to be sold by stores
+> sell_item,kroger,pot_roast,5
+OK:change_completed
+> sell_item,kroger,cheesecake,4
+OK:change_completed
+> display_items,kroger
+cheesecake,4
+pot_roast,5
+OK:display_completed
+> // create pilots to fly the drones
+> make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+OK:change_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:33
+OK:display_completed
+> // create drones to deliver the groceries
+> make_drone,kroger,1,40,3
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:3
+OK:display_completed
+> // assign a pilot to fly a specific drone
+> fly_drone,kroger,1,ffig8
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:3,flown_by:Finneas_Fig
+OK:display_completed
+> // create customers to purchase items
+> make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:100
+OK:display_completed
+> // create orders which will contain collections of items
+> start_order,kroger,purchaseA,1,aapple2
+OK:change_completed
+> start_order,kroger,purchaseB,1,aapple2
+OK:change_completed
+> display_orders,kroger
+orderID:purchaseA
+orderID:purchaseB
+OK:display_completed
+> // add items to the orders
+> request_item,kroger,purchaseA,pot_roast,3,9
+OK:change_completed
+> request_item,kroger,purchaseB,pot_roast,4,4
+OK:change_completed
+> display_orders,kroger
+orderID:purchaseA
+item_name:pot_roast,total_quantity:3,total_cost:27,total_weight:15
+orderID:purchaseB
+item_name:pot_roast,total_quantity:4,total_cost:16,total_weight:20
+OK:display_completed
+> // deliver an order to the customer and display the updated state
+> purchase_order,kroger,purchaseA
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:73
+OK:display_completed
+> display_stores
+name:kroger,revenue:33027
+OK:display_completed
+> display_orders,kroger
+orderID:purchaseB
+item_name:pot_roast,total_quantity:4,total_cost:16,total_weight:20
+OK:display_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:34
+OK:display_completed
+> // cancel an order per the customers request and display the updated state
+> cancel_order,kroger,purchaseB
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:73
+OK:display_completed
+> display_stores
+name:kroger,revenue:33027
+OK:display_completed
+> display_orders,kroger
+OK:display_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:34
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

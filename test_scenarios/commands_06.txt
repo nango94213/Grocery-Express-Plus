@@ -1,0 +1,8 @@
+// create multiple items
+make_store,kroger,33000
+display_stores
+sell_item,kroger,pot_roast,5
+sell_item,kroger,cheesecake,4
+// items (when displayed) will be sorted by item name
+display_items,kroger
+stop

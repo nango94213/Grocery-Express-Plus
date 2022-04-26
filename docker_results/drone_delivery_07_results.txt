@@ -1,0 +1,26 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a pilot and a drone
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+OK:change_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:33
+OK:display_completed
+> make_drone,kroger,1,40,3
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:3
+OK:display_completed
+> // assign the pilot to fly the drone
+> fly_drone,kroger,1,ffig8
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:3,flown_by:Finneas_Fig
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

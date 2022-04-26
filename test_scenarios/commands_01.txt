@@ -1,0 +1,4 @@
+// create a store
+make_store,kroger,33000
+display_stores
+stop

@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.models.Pilot" table = "pilot">
+
+        <meta attribute = "class-description">
+            This class contains appUser details.
+        </meta>
+
+        <id name = "pilotId" type = "int" column = "pilot_id">
+            <generator class="sequence">
+                <param name="sequence_name">pilot_pilot_id_seq</param>
+            </generator>
+        </id>
+        <property name = "accountId" type = "string" column = "account_id"/>
+        <property name = "authUserId" type = "string" column = "appuser_id"/>
+        <property name = "licenseId" type = "string" column = "license_id"/>
+        <property name = "taxIdentifier" type = "string" column = "tax_id"/>
+        <property name = "experience" type = "int" column = "experience"/>
+        <property name = "monthsOfEmployment" type = "int" column = "months_experience"/>
+        <property name = "salary" type = "int" column = "salary"/>
+
+    </class>
+</hibernate-mapping>

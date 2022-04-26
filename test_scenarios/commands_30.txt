@@ -1,0 +1,25 @@
+// create a store
+make_store,kroger,33000
+display_stores
+// create a drone that will be used to deliver orders
+make_drone,kroger,1,40,3
+display_drones,kroger
+// create a customer
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+// create a valid order
+start_order,kroger,purchaseA,1,aapple2
+display_orders,kroger
+// ERROR - attempt to create an order for a non-existent store
+start_order,wegmans,purchaseA,2,bbanana3
+// ERROR - attempt to create an order with a duplicate order ID
+start_order,kroger,purchaseA,2,bbanana3
+// ERROR - attempt to create an order for a non-existent drone
+start_order,kroger,purchaseB,2,bbanana3
+// ERROR - attempt to create an order for a non-existent customer
+start_order,kroger,purchaseB,1,bbanana3
+display_orders,kroger
+// create a second valid order
+start_order,kroger,purchaseB,1,aapple2
+display_orders,kroger
+stop

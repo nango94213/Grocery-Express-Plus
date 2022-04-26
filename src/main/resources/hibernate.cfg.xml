@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+<!--        <property name="connection.driver_class"/>-->
+        <property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://database:5432/postgres</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">postgres</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://database:5432/postgres</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hibernate.show_sql">false</property>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+
+        <!-- List of XML mapping files -->
+        <mapping resource="appuser.hbm.xml"/>
+        <mapping resource="log.hbm.xml"/>
+        <mapping resource="transactionlog.hbm.xml"/>
+        <mapping resource="role.hbm.xml"/>
+        <mapping resource="customer.hbm.xml"/>
+        <mapping resource="pilot.hbm.xml"/>
+        <mapping resource="rolepermission.hbm.xml"/>
+        <mapping resource="expressstore.hbm.xml"/>
+        <mapping resource="expressstoreitem.hbm.xml"/>
+        <mapping resource="expressconfiguration.hbm.xml"/>
+        <mapping resource="itemconfiguration.hbm.xml"/>
+        <mapping resource="storeconfiguration.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,9 @@
+// create a pilot
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+// ERROR - attempt to create a pilot with a duplicate pilot ID
+make_pilot,ffig8,Fred,Figgy,999-999-9999,901-23-4567,panam_4,31
+// ERROR - attempt to create a pilot with a duplicate pilot ID and license ID
+make_pilot,ffig8,Felicia,Figueroa,111-111-1111,123-45-6789,panam_10,26
+display_pilots
+stop

@@ -1,0 +1,499 @@
+Welcome to the Grocery Express Delivery Service!
+> // create multiple stores
+> make_store,aldi,20000
+OK:change_completed
+> make_store,fresh_market,57000
+OK:change_completed
+> make_store,publix,61000
+OK:change_completed
+> make_store,sprouts,33000
+OK:change_completed
+> make_store,trader_joes,38000
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57000
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38000
+OK:display_completed
+> // create multiple items to be sold by stores
+> sell_item,sprouts,asparagus,3
+OK:change_completed
+> sell_item,sprouts,blueberries,2
+OK:change_completed
+> display_items,sprouts
+asparagus,3
+blueberries,2
+OK:display_completed
+> sell_item,publix,asparagus,2
+OK:change_completed
+> sell_item,publix,cashews,2
+OK:change_completed
+> sell_item,publix,chocolate,3
+OK:change_completed
+> sell_item,publix,prawns,5
+OK:change_completed
+> display_items,publix
+asparagus,2
+cashews,2
+chocolate,3
+prawns,5
+OK:display_completed
+> sell_item,trader_joes,cashews,3
+OK:change_completed
+> sell_item,trader_joes,eggs,2
+OK:change_completed
+> sell_item,trader_joes,halibut,4
+OK:change_completed
+> sell_item,trader_joes,noodles,1
+OK:change_completed
+> sell_item,trader_joes,oysters,3
+OK:change_completed
+> display_items,trader_joes
+cashews,3
+eggs,2
+halibut,4
+noodles,1
+oysters,3
+OK:display_completed
+> sell_item,fresh_market,bacon,3
+OK:change_completed
+> sell_item,fresh_market,lamb,6
+OK:change_completed
+> sell_item,fresh_market,mushrooms,3
+OK:change_completed
+> sell_item,fresh_market,salmon,4
+OK:change_completed
+> sell_item,fresh_market,sushi,3
+OK:change_completed
+> display_items,fresh_market
+bacon,3
+lamb,6
+mushrooms,3
+salmon,4
+sushi,3
+OK:display_completed
+> display_items,aldi
+OK:display_completed
+> // create multiple pilots to control the drones
+> make_pilot,alan2,Alan,Alexander,111-111-1111,111-11-1111,lic_2,4
+OK:change_completed
+> make_pilot,fiona8,Fiona,Fitzpatrick,444-444-4444,444-44-4444,lic_8,2
+OK:change_completed
+> make_pilot,gina3,Gina,Garcia,222-222-2222,222-22-2222,lic_3,6
+OK:change_completed
+> make_pilot,peter5,Peter,Parsons,333-333-3333,333-33-3333,lic_5,3
+OK:change_completed
+> make_pilot,connor13,Connor,Cross,555-555-5555,555-55-5555,lic_13,5
+OK:change_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:4
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:5
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:2
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:6
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // create multiple drones to deliver the orders
+> make_drone,fresh_market,1,50,2
+OK:change_completed
+> make_drone,fresh_market,2,75,3
+OK:change_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:0,remaining_cap:50,trips_left:2
+droneID:2,total_cap:75,num_orders:0,remaining_cap:75,trips_left:3
+OK:display_completed
+> make_drone,sprouts,3,40,2
+OK:change_completed
+> display_drones,sprouts
+droneID:3,total_cap:40,num_orders:0,remaining_cap:40,trips_left:2
+OK:display_completed
+> make_drone,trader_joes,1,100,3
+OK:change_completed
+> display_drones,trader_joes
+droneID:1,total_cap:100,num_orders:0,remaining_cap:100,trips_left:3
+OK:display_completed
+> display_drones,aldi
+OK:display_completed
+> display_drones,publix
+OK:display_completed
+> // create multiple customers to purchase items
+> make_customer,carli2,Chanel,Cortez,666-666-6666,4,100
+OK:change_completed
+> make_customer,carlos5,Carlos,Chavez,888-888-8888,5,600
+OK:change_completed
+> make_customer,henry3,Henry,Horton,777-777-7777,2,200
+OK:change_completed
+> make_customer,olivia7,Olivia,Olson,999-999-9999,4,300
+OK:change_completed
+> make_customer,samuel11,Samuel,Schaefer,000-000-0000,1,400
+OK:change_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:100
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:200
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> // assign pilots to fly the drones
+> fly_drone,fresh_market,1,alan2
+OK:change_completed
+> fly_drone,fresh_market,2,gina3
+OK:change_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:0,remaining_cap:50,trips_left:2,flown_by:Alan_Alexander
+droneID:2,total_cap:75,num_orders:0,remaining_cap:75,trips_left:3,flown_by:Gina_Garcia
+OK:display_completed
+> fly_drone,sprouts,3,peter5
+OK:change_completed
+> display_drones,sprouts
+droneID:3,total_cap:40,num_orders:0,remaining_cap:40,trips_left:2,flown_by:Peter_Parsons
+OK:display_completed
+> fly_drone,trader_joes,1,fiona8
+OK:change_completed
+> display_drones,trader_joes
+droneID:1,total_cap:100,num_orders:0,remaining_cap:100,trips_left:3,flown_by:Fiona_Fitzpatrick
+OK:display_completed
+> display_drones,aldi
+OK:display_completed
+> display_drones,publix
+OK:display_completed
+> // create multiple orders as requested by customers
+> start_order,fresh_market,ordA,1,carli2
+OK:change_completed
+> start_order,fresh_market,ordB,1,carli2
+OK:change_completed
+> start_order,fresh_market,ordC,2,olivia7
+OK:change_completed
+> start_order,fresh_market,ordD,2,henry3
+OK:change_completed
+> display_orders,fresh_market
+orderID:ordA
+orderID:ordB
+orderID:ordC
+orderID:ordD
+OK:display_completed
+> start_order,trader_joes,ordE,1,henry3
+OK:change_completed
+> display_orders,trader_joes
+orderID:ordE
+OK:display_completed
+> start_order,sprouts,ordF,3,henry3
+OK:change_completed
+> display_orders,sprouts
+orderID:ordF
+OK:display_completed
+> // add multiple items to the orders
+> request_item,fresh_market,ordA,bacon,3,5
+OK:change_completed
+> request_item,fresh_market,ordA,lamb,1,10
+OK:change_completed
+> request_item,fresh_market,ordB,lamb,2,8
+OK:change_completed
+> request_item,fresh_market,ordB,mushrooms,1,4
+OK:change_completed
+> request_item,fresh_market,ordB,salmon,2,11
+OK:change_completed
+> request_item,fresh_market,ordC,lamb,1,8
+OK:change_completed
+> request_item,fresh_market,ordC,mushrooms,3,3
+OK:change_completed
+> request_item,fresh_market,ordC,salmon,1,11
+OK:change_completed
+> request_item,fresh_market,ordC,sushi,1,20
+OK:change_completed
+> request_item,fresh_market,ordD,salmon,3,10
+OK:change_completed
+> request_item,fresh_market,ordD,sushi,2,17
+OK:change_completed
+> display_orders,fresh_market
+orderID:ordA
+item_name:bacon,total_quantity:3,total_cost:15,total_weight:9
+item_name:lamb,total_quantity:1,total_cost:10,total_weight:6
+orderID:ordB
+item_name:lamb,total_quantity:2,total_cost:16,total_weight:12
+item_name:mushrooms,total_quantity:1,total_cost:4,total_weight:3
+item_name:salmon,total_quantity:2,total_cost:22,total_weight:8
+orderID:ordC
+item_name:lamb,total_quantity:1,total_cost:8,total_weight:6
+item_name:mushrooms,total_quantity:3,total_cost:9,total_weight:9
+item_name:salmon,total_quantity:1,total_cost:11,total_weight:4
+item_name:sushi,total_quantity:1,total_cost:20,total_weight:3
+orderID:ordD
+item_name:salmon,total_quantity:3,total_cost:30,total_weight:12
+item_name:sushi,total_quantity:2,total_cost:34,total_weight:6
+OK:display_completed
+> request_item,trader_joes,ordE,cashews,4,6
+OK:change_completed
+> display_orders,trader_joes
+orderID:ordE
+item_name:cashews,total_quantity:4,total_cost:24,total_weight:12
+OK:display_completed
+> display_orders,sprouts
+orderID:ordF
+OK:display_completed
+> // display the state for the Fresh Market store
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57000
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38000
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:100
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:200
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,fresh_market
+orderID:ordA
+item_name:bacon,total_quantity:3,total_cost:15,total_weight:9
+item_name:lamb,total_quantity:1,total_cost:10,total_weight:6
+orderID:ordB
+item_name:lamb,total_quantity:2,total_cost:16,total_weight:12
+item_name:mushrooms,total_quantity:1,total_cost:4,total_weight:3
+item_name:salmon,total_quantity:2,total_cost:22,total_weight:8
+orderID:ordC
+item_name:lamb,total_quantity:1,total_cost:8,total_weight:6
+item_name:mushrooms,total_quantity:3,total_cost:9,total_weight:9
+item_name:salmon,total_quantity:1,total_cost:11,total_weight:4
+item_name:sushi,total_quantity:1,total_cost:20,total_weight:3
+orderID:ordD
+item_name:salmon,total_quantity:3,total_cost:30,total_weight:12
+item_name:sushi,total_quantity:2,total_cost:34,total_weight:6
+OK:display_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:2,remaining_cap:12,trips_left:2,flown_by:Alan_Alexander
+droneID:2,total_cap:75,num_orders:2,remaining_cap:35,trips_left:3,flown_by:Gina_Garcia
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:4
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:5
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:2
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:6
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // deliver an order from Fresh Market and display the updated state
+> purchase_order,fresh_market,ordA
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57025
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38000
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:75
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:200
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,fresh_market
+orderID:ordB
+item_name:lamb,total_quantity:2,total_cost:16,total_weight:12
+item_name:mushrooms,total_quantity:1,total_cost:4,total_weight:3
+item_name:salmon,total_quantity:2,total_cost:22,total_weight:8
+orderID:ordC
+item_name:lamb,total_quantity:1,total_cost:8,total_weight:6
+item_name:mushrooms,total_quantity:3,total_cost:9,total_weight:9
+item_name:salmon,total_quantity:1,total_cost:11,total_weight:4
+item_name:sushi,total_quantity:1,total_cost:20,total_weight:3
+orderID:ordD
+item_name:salmon,total_quantity:3,total_cost:30,total_weight:12
+item_name:sushi,total_quantity:2,total_cost:34,total_weight:6
+OK:display_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:1,remaining_cap:27,trips_left:1,flown_by:Alan_Alexander
+droneID:2,total_cap:75,num_orders:2,remaining_cap:35,trips_left:3,flown_by:Gina_Garcia
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:5
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:5
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:2
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:6
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // assign a new pilot for a Fresh Market drone
+> fly_drone,fresh_market,1,connor13
+OK:change_completed
+> // deliver an order from Fresh Market and display the updated state
+> purchase_order,fresh_market,ordB
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57067
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38000
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:33
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:200
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,fresh_market
+orderID:ordC
+item_name:lamb,total_quantity:1,total_cost:8,total_weight:6
+item_name:mushrooms,total_quantity:3,total_cost:9,total_weight:9
+item_name:salmon,total_quantity:1,total_cost:11,total_weight:4
+item_name:sushi,total_quantity:1,total_cost:20,total_weight:3
+orderID:ordD
+item_name:salmon,total_quantity:3,total_cost:30,total_weight:12
+item_name:sushi,total_quantity:2,total_cost:34,total_weight:6
+OK:display_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:0,remaining_cap:50,trips_left:0,flown_by:Connor_Cross
+droneID:2,total_cap:75,num_orders:2,remaining_cap:35,trips_left:3,flown_by:Gina_Garcia
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:5
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:6
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:2
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:6
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // cancel an order from Fresh Market and display the updated state
+> cancel_order,fresh_market,ordC
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57067
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38000
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:33
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:200
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,fresh_market
+orderID:ordD
+item_name:salmon,total_quantity:3,total_cost:30,total_weight:12
+item_name:sushi,total_quantity:2,total_cost:34,total_weight:6
+OK:display_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:0,remaining_cap:50,trips_left:0,flown_by:Connor_Cross
+droneID:2,total_cap:75,num_orders:1,remaining_cap:57,trips_left:3,flown_by:Gina_Garcia
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:5
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:6
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:2
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:6
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // deliver an order from Fresh Market and display the updated state
+> purchase_order,fresh_market,ordD
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57131
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38000
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:33
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:136
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,fresh_market
+OK:display_completed
+> display_drones,fresh_market
+droneID:1,total_cap:50,num_orders:0,remaining_cap:50,trips_left:0,flown_by:Connor_Cross
+droneID:2,total_cap:75,num_orders:0,remaining_cap:75,trips_left:2,flown_by:Gina_Garcia
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:5
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:6
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:2
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:7
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // display the state for the Trader Joes store
+> display_orders,trader_joes
+orderID:ordE
+item_name:cashews,total_quantity:4,total_cost:24,total_weight:12
+OK:display_completed
+> display_drones,trader_joes
+droneID:1,total_cap:100,num_orders:1,remaining_cap:88,trips_left:3,flown_by:Fiona_Fitzpatrick
+OK:display_completed
+> // deliver an order from Trader Joes and display the updated state
+> purchase_order,trader_joes,ordE
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57131
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38024
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:33
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:112
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,trader_joes
+OK:display_completed
+> display_drones,trader_joes
+droneID:1,total_cap:100,num_orders:0,remaining_cap:100,trips_left:2,flown_by:Fiona_Fitzpatrick
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:5
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:6
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:3
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:7
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:3
+OK:display_completed
+> // display the state for the Sprouts store
+> display_orders,sprouts
+orderID:ordF
+OK:display_completed
+> display_drones,sprouts
+droneID:3,total_cap:40,num_orders:1,remaining_cap:40,trips_left:2,flown_by:Peter_Parsons
+OK:display_completed
+> // deliver an order from Sprouts and display the updated state
+> purchase_order,sprouts,ordF
+OK:change_completed
+> display_stores
+name:aldi,revenue:20000
+name:fresh_market,revenue:57131
+name:publix,revenue:61000
+name:sprouts,revenue:33000
+name:trader_joes,revenue:38024
+OK:display_completed
+> display_customers
+name:Chanel_Cortez,phone:666-666-6666,rating:4,credit:33
+name:Carlos_Chavez,phone:888-888-8888,rating:5,credit:600
+name:Henry_Horton,phone:777-777-7777,rating:2,credit:112
+name:Olivia_Olson,phone:999-999-9999,rating:4,credit:300
+name:Samuel_Schaefer,phone:000-000-0000,rating:1,credit:400
+OK:display_completed
+> display_orders,sprouts
+OK:display_completed
+> display_drones,sprouts
+droneID:3,total_cap:40,num_orders:0,remaining_cap:40,trips_left:1,flown_by:Peter_Parsons
+OK:display_completed
+> display_pilots
+name:Alan_Alexander,phone:111-111-1111,taxID:111-11-1111,licenseID:lic_2,experience:5
+name:Connor_Cross,phone:555-555-5555,taxID:555-55-5555,licenseID:lic_13,experience:6
+name:Fiona_Fitzpatrick,phone:444-444-4444,taxID:444-44-4444,licenseID:lic_8,experience:3
+name:Gina_Garcia,phone:222-222-2222,taxID:222-22-2222,licenseID:lic_3,experience:7
+name:Peter_Parsons,phone:333-333-3333,taxID:333-33-3333,licenseID:lic_5,experience:4
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

@@ -1,0 +1,117 @@
+// create multiple stores
+make_store,kroger,33000
+make_store,kroger,37000
+make_store,publix,33000
+display_stores
+// create multiple items to be sold by stores
+sell_item,kroger,pot_roast,5
+sell_item,kroger,cheesecake,4
+sell_item,publix,cheesecake,8
+sell_item,whole_foods,antipasto,10
+sell_item,kroger,cheesecake,3
+display_items,kroger
+display_items,publix
+display_items,whole_foods
+// create multiple pilots to control the drones
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+make_pilot,ggrape17,Gillian,Grape,999-999-9999,234-56-7890,twa_21,31
+make_pilot,ffig8,Frances,Faro,777-777-7777,678-90-1234,eastern_6,36
+make_pilot,kkiwi23,Kiara,Kiwi,555-555-5555,890-12-3456,panam_10,28
+display_pilots
+// create multiple drones to deliver the orders
+make_drone,kroger,1,40,1
+make_drone,whole_foods,1,40,3
+make_drone,kroger,1,100,1
+make_drone,publix,1,40,3
+make_drone,kroger,2,20,3
+display_drones,kroger
+display_drones,publix
+display_drones,whole_foods
+// assign pilots to fly the drones
+fly_drone,kroger,1,ffig8
+fly_drone,whole_foods,1,ggrape17
+fly_drone,publix,2,ggrape17
+fly_drone,publix,1,hhoneydew20
+fly_drone,publix,1,ggrape17
+display_drones,kroger
+display_drones,publix
+display_drones,whole_foods
+// create multiple customers to purchase items
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+make_customer,aapple2,Ariana,Asparagus,333-333-3333,5,150
+make_customer,ccherry4,Carlos,Cherry,444-444-4444,5,300
+display_customers
+// create multiple orders as requested by customers
+start_order,kroger,purchaseA,1,aapple2
+start_order,kroger,purchaseB,1,aapple2
+start_order,whole_foods,purchaseC,1,aapple2
+start_order,kroger,purchaseA,1,aapple2
+start_order,kroger,purchaseC,3,aapple2
+start_order,kroger,purchaseC,1,bbanana3
+start_order,kroger,purchaseD,2,ccherry4
+start_order,publix,purchaseA,1,ccherry4
+display_orders,kroger
+display_orders,publix
+display_orders,whole_foods
+// add multiple items to the orders
+request_item,kroger,purchaseA,pot_roast,3,10
+request_item,kroger,purchaseB,pot_roast,4,5
+request_item,whole_foods,purchaseA,cheesecake,1,10
+request_item,kroger,purchaseE,cheesecake,1,10
+request_item,kroger,purchaseA,truffle_risotto,1,10
+request_item,kroger,purchaseA,pot_roast,1,10
+request_item,kroger,purchaseA,cheesecake,1,90
+request_item,kroger,purchaseA,cheesecake,10,5
+request_item,publix,purchaseA,cheesecake,3,10
+request_item,kroger,purchaseD,cheesecake,1,10
+// display the state of the simulation
+display_orders,kroger
+display_orders,publix
+display_customers
+display_stores
+display_drones,kroger
+display_drones,publix
+display_pilots
+// deliver an order and display the updated state
+purchase_order,kroger,purchaseA
+display_orders,kroger
+display_orders,publix
+display_customers
+display_stores
+display_drones,kroger
+display_drones,publix
+display_pilots
+// deliver orders from various stores
+purchase_order,whole_foods,purchaseA
+purchase_order,kroger,purchaseF
+purchase_order,kroger,purchaseB
+purchase_order,kroger,purchaseD
+fly_drone,kroger,2,ffig8
+purchase_order,kroger,purchaseD
+display_orders,kroger
+display_orders,publix
+display_customers
+display_stores
+display_drones,kroger
+display_drones,publix
+display_pilots
+purchase_order,publix,purchaseA
+display_orders,kroger
+display_orders,publix
+display_customers
+display_stores
+display_drones,kroger
+display_drones,publix
+display_pilots
+// cancel orders per customer requests
+cancel_order,whole_foods,purchaseB
+cancel_order,kroger,purchaseG
+cancel_order,kroger,purchaseB
+display_orders,kroger
+display_orders,publix
+display_customers
+display_stores
+display_drones,kroger
+display_drones,publix
+display_pilots
+stop

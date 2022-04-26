@@ -1,0 +1,40 @@
+// create stores
+make_store,kroger,33000
+display_stores
+// create items to be sold by stores
+sell_item,kroger,pot_roast,5
+sell_item,kroger,cheesecake,4
+display_items,kroger
+// create pilots to fly the drones
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+// create drones to deliver the groceries
+make_drone,kroger,1,40,3
+display_drones,kroger
+// assign a pilot to fly a specific drone
+fly_drone,kroger,1,ffig8
+display_drones,kroger
+// create customers to purchase items
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+// create orders which will contain collections of items
+start_order,kroger,purchaseA,1,aapple2
+start_order,kroger,purchaseB,1,aapple2
+display_orders,kroger
+// add items to the orders
+request_item,kroger,purchaseA,pot_roast,3,9
+request_item,kroger,purchaseB,pot_roast,4,4
+display_orders,kroger
+// deliver an order to the customer and display the updated state
+purchase_order,kroger,purchaseA
+display_customers
+display_stores
+display_orders,kroger
+display_pilots
+// cancel an order per the customers request and display the updated state
+cancel_order,kroger,purchaseB
+display_customers
+display_stores
+display_orders,kroger
+display_pilots
+stop

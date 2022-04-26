@@ -1,0 +1,29 @@
+// create a store and an item to sell
+make_store,kroger,33000
+display_stores
+sell_item,kroger,cheesecake,4
+display_items,kroger
+// create a pilot and a drone that will be flown by that pilot
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+make_drone,kroger,1,40,0
+display_drones,kroger
+// create a customer and an order with one item
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+start_order,kroger,purchaseB,1,aapple2
+request_item,kroger,purchaseB,cheesecake,4,4
+display_orders,kroger
+// ERROR - attempt to deliver an order from a non-existent store
+purchase_order,wegmans,purchaseA
+// ERROR - attempt to deliver a non-existent order
+purchase_order,kroger,purchaseA
+// ERROR - attempt to deliver an order when the drone has no pilot
+display_drones,kroger
+purchase_order,kroger,purchaseB
+// assign a pilot to the drone
+fly_drone,kroger,1,ffig8
+display_drones,kroger
+// ERROR - attempt to deliver an order when the drone needs fuel
+purchase_order,kroger,purchaseB
+stop

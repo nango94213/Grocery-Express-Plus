@@ -1,0 +1,10 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a store
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.models.AppUser" table = "appuser">
+
+        <meta attribute = "class-description">
+            This class contains appUser details.
+        </meta>
+
+        <id name = "name" type = "string" column = "user_id" />
+        <property name = "role" type = "string" column = "role_name"/>
+        <property name = "password" type = "string" column = "password"/>
+        <property name = "firstname" type = "string" column = "first_name"/>
+        <property name = "lastname" type = "string" column = "last_name"/>
+        <property name = "phonenumber" type = "string" column = "phone_number"/>
+
+    </class>
+</hibernate-mapping>

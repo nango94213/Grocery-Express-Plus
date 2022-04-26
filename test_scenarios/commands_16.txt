@@ -1,0 +1,9 @@
+// create a store
+make_store,kroger,33000
+display_stores
+// create an item
+sell_item,kroger,pot_roast,5
+display_items,kroger
+// ERROR - attempt to display the items for a store that doesn't exist
+display_items,wegmans
+stop

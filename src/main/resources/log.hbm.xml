@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.logger.models.Log" table = "log_events">
+
+        <meta attribute = "class-description">
+            This class contains all system related log events.
+        </meta>
+
+        <id name = "logId" type = "string" column = "log_id" />
+
+        <property name = "commandType" column = "command_type" type = "string"/>
+        <property name = "level" column = "level" type = "string"/>
+        <property name = "message" column = "message" type = "string"/>
+        <property name = "creationDate" column = "creation_date" type = "date"/>
+
+    </class>
+</hibernate-mapping>

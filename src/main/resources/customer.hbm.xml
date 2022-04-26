@@ -1,0 +1,24 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.models.Customer" table = "customer">
+
+        <meta attribute = "class-description">
+            This class contains appUser details.
+        </meta>
+
+        <id name = "customerId" type = "int" column = "customer_id">
+            <generator class="sequence">
+                <param name="sequence_name">customer_customer_id_seq</param>
+            </generator>
+        </id>
+        <property name = "accountId" type = "string" column = "account_id"/>
+        <property name = "authUserId" type = "string" column = "appuser_id"/>
+        <property name = "rating" type = "int" column = "rating"/>
+        <property name = "credit" type = "int" column = "credit"/>
+
+    </class>
+</hibernate-mapping>

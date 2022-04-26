@@ -1,0 +1,4 @@
+// create a pilot
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+stop

@@ -1,0 +1,10 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a customer
+> make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:100
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

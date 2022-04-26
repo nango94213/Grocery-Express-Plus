@@ -1,0 +1,10 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a pilot
+> make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+OK:change_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:33
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

@@ -1,0 +1,11 @@
+// create a pilot and a drone
+make_store,kroger,33000
+display_stores
+make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+display_pilots
+make_drone,kroger,1,40,3
+display_drones,kroger
+// assign the pilot to fly the drone
+fly_drone,kroger,1,ffig8
+display_drones,kroger
+stop

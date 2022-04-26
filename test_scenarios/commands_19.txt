@@ -1,0 +1,7 @@
+// create a store
+make_store,kroger,33000
+display_stores
+// ERROR - attempt to create duplicate store name
+make_store,kroger,29000
+display_stores
+stop

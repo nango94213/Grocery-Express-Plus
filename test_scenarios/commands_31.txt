@@ -1,0 +1,34 @@
+// create a store
+make_store,kroger,33000
+display_stores
+// create items to be sold by the store
+sell_item,kroger,pot_roast,9
+sell_item,kroger,cheesecake,4
+display_items,kroger
+// create a drone to deliver the orders
+make_drone,kroger,1,40,3
+display_drones,kroger
+// create a customer to purchase items
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+// start the order and add an initial item
+start_order,kroger,purchaseA,1,aapple2
+request_item,kroger,purchaseA,cheesecake,2,5
+display_orders,kroger
+// ERROR - attempt to add item from a non-existent store
+request_item,wegmans,purchaseB,strawberry_cheesecake,10,10
+// ERROR - attempt to add item to a non-existent order
+request_item,kroger,purchaseB,strawberry_cheesecake,10,10
+// ERROR - attempt to add a non-existent item to order
+request_item,kroger,purchaseA,strawberry_cheesecake,10,10
+// ERROR - attempt to add a duplicate item to order
+request_item,kroger,purchaseA,cheesecake,10,10
+// ERROR - customer doesn't have enough money to purchase the item
+request_item,kroger,purchaseA,pot_roast,10,10
+// ERROR - drone doesn't have capacity to carry or lift the item
+request_item,kroger,purchaseA,pot_roast,4,10
+display_orders,kroger
+// add a second item
+request_item,kroger,purchaseA,pot_roast,2,10
+display_orders,kroger
+stop

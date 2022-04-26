@@ -1,0 +1,61 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a store and an item to sell
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> sell_item,kroger,cheesecake,4
+OK:change_completed
+> display_items,kroger
+cheesecake,4
+OK:display_completed
+> // create a pilot and a drone that will be flown by that pilot
+> make_pilot,ffig8,Finneas,Fig,888-888-8888,890-12-3456,panam_10,33
+OK:change_completed
+> display_pilots
+name:Finneas_Fig,phone:888-888-8888,taxID:890-12-3456,licenseID:panam_10,experience:33
+OK:display_completed
+> make_drone,kroger,1,40,0
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:0
+OK:display_completed
+> // create a customer and an order with one item
+> make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:100
+OK:display_completed
+> start_order,kroger,purchaseB,1,aapple2
+OK:change_completed
+> request_item,kroger,purchaseB,cheesecake,4,4
+OK:change_completed
+> display_orders,kroger
+orderID:purchaseB
+item_name:cheesecake,total_quantity:4,total_cost:16,total_weight:16
+OK:display_completed
+> // ERROR - attempt to deliver an order from a non-existent store
+> purchase_order,wegmans,purchaseA
+ERROR:store_identifier_does_not_exist
+> // ERROR - attempt to deliver a non-existent order
+> purchase_order,kroger,purchaseA
+ERROR:order_identifier_does_not_exist
+> // ERROR - attempt to deliver an order when the drone has no pilot
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:1,remaining_cap:24,trips_left:0
+OK:display_completed
+> purchase_order,kroger,purchaseB
+ERROR:drone_needs_pilot
+> // assign a pilot to the drone
+> fly_drone,kroger,1,ffig8
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:1,remaining_cap:24,trips_left:0,flown_by:Finneas_Fig
+OK:display_completed
+> // ERROR - attempt to deliver an order when the drone needs fuel
+> purchase_order,kroger,purchaseB
+ERROR:drone_needs_fuel
+> stop
+stop acknowledged
+simulation terminated

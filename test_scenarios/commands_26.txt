@@ -1,0 +1,7 @@
+// create a customer
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+// ERROR - attempt to create a customer with a duplicate customer ID
+make_customer,aapple2,Aaron,Apple,333-333-3333,3,35
+display_customers
+stop

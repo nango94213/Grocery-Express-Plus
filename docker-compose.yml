@@ -1,0 +1,39 @@
+version: '3'
+services:
+  database:
+    image: 'postgres'
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - '5432:5432'
+    volumes:
+      # copy the sql script to create tables
+      - ./sql/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+      # copy the sql script to fill tables
+      - ./sql/fill_tables.sql:/docker-entrypoint-initdb.d/fill_tables.sql
+  app-server:
+    build: .
+    depends_on:
+      - database
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 2
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: postgres
+    links:
+      - database
+    stdin_open: true
+    tty: true

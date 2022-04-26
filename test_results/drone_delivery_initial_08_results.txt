@@ -1,0 +1,26 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a store and a drone
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> make_drone,kroger,1,40,3
+OK:change_completed
+> display_drones,kroger
+droneID:1,total_cap:40,num_orders:0,remaining_cap:40,trips_left:3
+OK:display_completed
+> // create a customer and start an order
+> make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+OK:change_completed
+> display_customers
+name:Alana_Apple,phone:222-222-2222,rating:4,credit:100
+OK:display_completed
+> start_order,kroger,purchaseA,1,aapple2
+OK:change_completed
+> display_orders,kroger
+orderID:purchaseA
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

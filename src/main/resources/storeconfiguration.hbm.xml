@@ -1,0 +1,18 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.configuration.models.StoreConfiguration" table = "storeconfigration">
+
+        <meta attribute = "class-description">
+            This class contains store configuration details.
+        </meta>
+
+        <composite-id>
+            <key-property name="storename" column="storename" type = "string"/>
+            <key-property name="configurationname" column="configurationname" type = "string"/>
+        </composite-id>
+    </class>
+</hibernate-mapping>

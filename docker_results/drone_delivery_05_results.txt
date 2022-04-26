@@ -1,0 +1,15 @@
+Welcome to the Grocery Express Delivery Service!
+> // create an item
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> sell_item,kroger,pot_roast,5
+OK:change_completed
+> display_items,kroger
+pot_roast,5
+OK:display_completed
+> stop
+stop acknowledged
+simulation terminated

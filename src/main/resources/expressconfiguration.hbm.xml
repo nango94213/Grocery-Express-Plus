@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "edu.gatech.cs6310.configuration.models.ExpressConfiguration" table = "expressconfiguration">
+
+        <meta attribute = "class-description">
+            This class contains configuration details.
+        </meta>
+
+        <id name = "name" type = "string" column = "name" />
+
+        <property name = "storename" column = "storename" type = "string"/>
+        <property name = "type" column = "type" type = "string"/>
+        <property name = "category" column = "category" type = "string"/>
+        <property name = "quota" column = "quota" type = "int"/>
+        <property name = "active" column = "active" type = "boolean"/>
+
+
+    </class>
+</hibernate-mapping>

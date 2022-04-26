@@ -1,0 +1,19 @@
+Welcome to the Grocery Express Delivery Service!
+> // create a store
+> make_store,kroger,33000
+OK:change_completed
+> display_stores
+name:kroger,revenue:33000
+OK:display_completed
+> // create an item
+> sell_item,kroger,pot_roast,5
+OK:change_completed
+> display_items,kroger
+pot_roast,5
+OK:display_completed
+> // ERROR - attempt to display the items for a store that doesn't exist
+> display_items,wegmans
+ERROR:store_identifier_does_not_exist
+> stop
+stop acknowledged
+simulation terminated

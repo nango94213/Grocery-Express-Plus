@@ -1,0 +1,16 @@
+// create a store, a drone and an item to sell
+make_store,kroger,33000
+display_stores
+sell_item,kroger,pot_roast,5
+display_items,kroger
+make_drone,kroger,1,40,3
+display_drones,kroger
+// create a customer and an order
+make_customer,aapple2,Alana,Apple,222-222-2222,4,100
+display_customers
+start_order,kroger,purchaseA,1,aapple2
+display_orders,kroger
+// add an item to the order
+request_item,kroger,purchaseA,pot_roast,3,9
+display_orders,kroger
+stop

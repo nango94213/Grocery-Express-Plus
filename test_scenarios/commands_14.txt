@@ -1,0 +1,146 @@
+// create multiple stores
+make_store,aldi,20000
+make_store,fresh_market,57000
+make_store,publix,61000
+make_store,sprouts,33000
+make_store,trader_joes,38000
+display_stores
+// create multiple items to be sold by stores
+sell_item,sprouts,asparagus,3
+sell_item,sprouts,blueberries,2
+display_items,sprouts
+sell_item,publix,asparagus,2
+sell_item,publix,cashews,2
+sell_item,publix,chocolate,3
+sell_item,publix,prawns,5
+display_items,publix
+sell_item,trader_joes,cashews,3
+sell_item,trader_joes,eggs,2
+sell_item,trader_joes,halibut,4
+sell_item,trader_joes,noodles,1
+sell_item,trader_joes,oysters,3
+display_items,trader_joes
+sell_item,fresh_market,bacon,3
+sell_item,fresh_market,lamb,6
+sell_item,fresh_market,mushrooms,3
+sell_item,fresh_market,salmon,4
+sell_item,fresh_market,sushi,3
+display_items,fresh_market
+display_items,aldi
+// create multiple pilots to control the drones
+make_pilot,alan2,Alan,Alexander,111-111-1111,111-11-1111,lic_2,4
+make_pilot,fiona8,Fiona,Fitzpatrick,444-444-4444,444-44-4444,lic_8,2
+make_pilot,gina3,Gina,Garcia,222-222-2222,222-22-2222,lic_3,6
+make_pilot,peter5,Peter,Parsons,333-333-3333,333-33-3333,lic_5,3
+make_pilot,connor13,Connor,Cross,555-555-5555,555-55-5555,lic_13,5
+display_pilots
+// create multiple drones to deliver the orders
+make_drone,fresh_market,1,50,2
+make_drone,fresh_market,2,75,3
+display_drones,fresh_market
+make_drone,sprouts,3,40,2
+display_drones,sprouts
+make_drone,trader_joes,1,100,3
+display_drones,trader_joes
+display_drones,aldi
+display_drones,publix
+// create multiple customers to purchase items
+make_customer,carli2,Chanel,Cortez,666-666-6666,4,100
+make_customer,carlos5,Carlos,Chavez,888-888-8888,5,600
+make_customer,henry3,Henry,Horton,777-777-7777,2,200
+make_customer,olivia7,Olivia,Olson,999-999-9999,4,300
+make_customer,samuel11,Samuel,Schaefer,000-000-0000,1,400
+display_customers
+// assign pilots to fly the drones
+fly_drone,fresh_market,1,alan2
+fly_drone,fresh_market,2,gina3
+display_drones,fresh_market
+fly_drone,sprouts,3,peter5
+display_drones,sprouts
+fly_drone,trader_joes,1,fiona8
+display_drones,trader_joes
+display_drones,aldi
+display_drones,publix
+// create multiple orders as requested by customers
+start_order,fresh_market,ordA,1,carli2
+start_order,fresh_market,ordB,1,carli2
+start_order,fresh_market,ordC,2,olivia7
+start_order,fresh_market,ordD,2,henry3
+display_orders,fresh_market
+start_order,trader_joes,ordE,1,henry3
+display_orders,trader_joes
+start_order,sprouts,ordF,3,henry3
+display_orders,sprouts
+// add multiple items to the orders
+request_item,fresh_market,ordA,bacon,3,5
+request_item,fresh_market,ordA,lamb,1,10
+request_item,fresh_market,ordB,lamb,2,8
+request_item,fresh_market,ordB,mushrooms,1,4
+request_item,fresh_market,ordB,salmon,2,11
+request_item,fresh_market,ordC,lamb,1,8
+request_item,fresh_market,ordC,mushrooms,3,3
+request_item,fresh_market,ordC,salmon,1,11
+request_item,fresh_market,ordC,sushi,1,20
+request_item,fresh_market,ordD,salmon,3,10
+request_item,fresh_market,ordD,sushi,2,17
+display_orders,fresh_market
+request_item,trader_joes,ordE,cashews,4,6
+display_orders,trader_joes
+display_orders,sprouts
+// display the state for the Fresh Market store
+display_stores
+display_customers
+display_orders,fresh_market
+display_drones,fresh_market
+display_pilots
+// deliver an order from Fresh Market and display the updated state
+purchase_order,fresh_market,ordA
+display_stores
+display_customers
+display_orders,fresh_market
+display_drones,fresh_market
+display_pilots
+// assign a new pilot for a Fresh Market drone
+fly_drone,fresh_market,1,connor13
+// deliver an order from Fresh Market and display the updated state
+purchase_order,fresh_market,ordB
+display_stores
+display_customers
+display_orders,fresh_market
+display_drones,fresh_market
+display_pilots
+// cancel an order from Fresh Market and display the updated state
+cancel_order,fresh_market,ordC
+display_stores
+display_customers
+display_orders,fresh_market
+display_drones,fresh_market
+display_pilots
+// deliver an order from Fresh Market and display the updated state
+purchase_order,fresh_market,ordD
+display_stores
+display_customers
+display_orders,fresh_market
+display_drones,fresh_market
+display_pilots
+// display the state for the Trader Joes store
+display_orders,trader_joes
+display_drones,trader_joes
+// deliver an order from Trader Joes and display the updated state
+purchase_order,trader_joes,ordE
+display_stores
+display_customers
+display_orders,trader_joes
+display_drones,trader_joes
+display_pilots
+// display the state for the Sprouts store
+display_orders,sprouts
+display_drones,sprouts
+// deliver an order from Sprouts and display the updated state
+purchase_order,sprouts,ordF
+display_stores
+display_customers
+display_orders,sprouts
+display_drones,sprouts
+display_pilots
+stop
